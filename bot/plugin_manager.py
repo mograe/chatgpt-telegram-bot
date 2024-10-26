@@ -16,6 +16,7 @@ from plugins.worldtimeapi import WorldTimeApiPlugin
 from plugins.whois_ import WhoisPlugin
 from plugins.webshot import WebshotPlugin
 from plugins.iplocation import IpLocationPlugin
+from plugins.youtube_video_downloader import YouTubeVideoDownloaderPlugin
 
 
 class PluginManager:
@@ -35,6 +36,7 @@ class PluginManager:
             'spotify': SpotifyPlugin,
             'worldtimeapi': WorldTimeApiPlugin,
             'youtube_audio_extractor': YouTubeAudioExtractorPlugin,
+            'youtube_video_downloader': YouTubeVideoDownloaderPlugin,
             'dice': DicePlugin,
             'deepl_translate': DeeplTranslatePlugin,
             'gtts_text_to_speech': GTTSTextToSpeech,
@@ -44,6 +46,7 @@ class PluginManager:
             'iplocation': IpLocationPlugin,
         }
         self.plugins = [plugin_mapping[plugin]() for plugin in enabled_plugins if plugin in plugin_mapping]
+        print(enabled_plugins)
 
     def get_functions_specs(self):
         """
